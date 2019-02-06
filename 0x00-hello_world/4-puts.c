@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
 * main - use puts to print a string
 *

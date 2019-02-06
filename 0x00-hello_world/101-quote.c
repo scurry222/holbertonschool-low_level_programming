@@ -1,10 +1,9 @@
-#include <stdio.h>
 #include <unistd.h>
 
 /**
-* main - write quote to standard output
+* main - write quote to standard error
 *
-* Return: 0 (success)
+* Return: 1 (success)
 */
 
 int main(void)

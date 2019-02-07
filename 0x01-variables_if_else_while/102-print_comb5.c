@@ -18,11 +18,11 @@ int main(void)
 	{
 		for (c2 = 48; c2 <= 56; c2++)
 		{
-			for (c3 = 48; c3 <= 57; c3++)
+			for (c3 = c; c3 <= 57; c3++)
 			{
-				for (c4 = 49; c4 <= 57; c4++)
+				for (c4 = c2 + 1; c4 <= 57; c4++)
 				{
-					if (c != c2 || c2 != c3 || c3 != c4 || c != c4 || c != c3)
+					if (c != c2 || c2 != c3 || c3 != c4 || c2 != c4 || c != c3 || c != c4)
 					{
 					putchar(c);
 					putchar(c2);

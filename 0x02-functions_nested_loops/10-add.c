@@ -1,9 +1,11 @@
 #include "holberton.h"
 
 /**
+* add - add two numbers
+* @a: first number
+* @b: second number
 *
-*
-*
+* Return: sum of two numbers
 */
 
 int add(int a, int b)
@@ -12,5 +14,5 @@ int add(int a, int b)
 
 	sum = a + b;
 
-	return(sum);
+	return (sum);
 }

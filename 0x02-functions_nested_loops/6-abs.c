@@ -2,9 +2,9 @@
 
 /**
  * _abs - compute the absolute value of an integer
- * @int: any integer to pass into function
+ * @r: any integer to pass into function
  *
- * Return: Always 0.
+ * Return: number
  */
 
 int _abs(int r)

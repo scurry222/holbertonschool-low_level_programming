@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
+* times_table - print a times table with only putchar
 *
-*
-*
+* Return: void
 */
 
 void times_table(void)
@@ -14,7 +14,7 @@ void times_table(void)
 
 	for (x = 0; x <= 9; x++)
 	{
-		for(y = 0; y <= 9; y++)
+		for (y = 0; y <= 9; y++)
 		{
 			sum = x * y;
 			if (sum <= 9)

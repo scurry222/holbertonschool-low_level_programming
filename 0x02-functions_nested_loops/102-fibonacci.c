@@ -9,18 +9,18 @@
 
 int main(void)
 {
-	unsigned long curr;
-	unsigned long old = 1;
-	unsigned long older = 0;
+	int curr;
+	int old = 1;
+	int older = 0;
 	int i;
 
-	printf("%lu, %lu, ", older, old);
+	printf("%d, %d, ", older, old);
 
 	for (i = 2; i <= 49; i++)
 	{
 		curr = old + older;
 
-		printf("%lu", curr);
+		printf("%d", curr);
 		if (i == 49)
 			putchar('\n');
 		else

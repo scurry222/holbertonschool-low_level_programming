@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* times_table - print a times table with only putchar
+* print_times_table - print a times table with only putchar
 * @n: passed in number to act as table size
 *
 * Return: void
@@ -25,7 +25,7 @@ void print_times_table(int n)
 				{
 					_putchar(',');
 					_putchar(' ');
-					if (prod > 99)		
+					if (prod > 99)
 						_putchar(prod / 100 + '0');
 					else
 						_putchar(' ');

@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+* main - print 50 fibonacci numbers, starting from 1 and 2
+*
+* Return: 0 (success)
+*/
+
+int main(void)
+{
+	unsigned long curr;
+	unsigned long old = 1;
+	unsigned long older = 0;
+	int i;
+
+	printf("%lu, %lu, ", older, old);
+
+	for (i = 0; i <= 50; i++)
+	{
+		curr = old + older;
+
+		printf("%lu", curr);
+		if (i == 50)
+			putchar('\n');
+		else
+			printf(", ");
+		older = old;
+		old = curr;
+	}
+	return (0);
+}

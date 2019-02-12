@@ -21,11 +21,8 @@ void print_times_table(int n)
 			for (x = 1; x <= n; x++)
 			{
 				prod = x * y;
-				if (x <= n)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
+				_putchar(',');
+				_putchar(' ');
 				if (prod > 99)
 					_putchar(prod / 100 + '0');
 				else

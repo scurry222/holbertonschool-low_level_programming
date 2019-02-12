@@ -16,12 +16,12 @@ int main(void)
 
 	printf("%lu, %lu, ", older, old);
 
-	for (i = 0; i <= 50; i++)
+	for (i = 2; i <= 49; i++)
 	{
 		curr = old + older;
 
 		printf("%lu", curr);
-		if (i == 50)
+		if (i == 49)
 			putchar('\n');
 		else
 			printf(", ");

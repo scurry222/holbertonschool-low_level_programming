@@ -12,16 +12,14 @@ int main(void)
 	unsigned long curr;
 	unsigned long old = 2;
 	unsigned long older = 1;
-	unsigned long sum;
+	unsigned long sum = 2;
 	int i;
 
-	for (i = 2; i <= 31; i++)
+	for (i = 0; i < 30; i++)
 	{
 		curr = old + older;
-		if (curr % 2 == 0)
-		{
+		if ((curr % 2) == 0)
 			sum += curr;
-		}
 		older = old;
 		old = curr;
 	}

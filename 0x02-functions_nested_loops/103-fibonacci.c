@@ -16,7 +16,7 @@ int main(void)
 
 	printf("%lu, %lu, ", older, old);
 
-	for (i = 2; i <= 32; i++)
+	for (i = 2; i <= 31; i++)
 	{
 		curr = old + older;
 		if (curr % 2 == 0)

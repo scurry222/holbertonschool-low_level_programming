@@ -10,8 +10,8 @@
 int main(void)
 {
 	unsigned long curr;
-	unsigned long old = 1;
-	unsigned long older = 0;
+	unsigned long old = 2;
+	unsigned long older = 1;
 	unsigned long onehalf;
 	unsigned long twohalf;
 	int i;
@@ -22,15 +22,15 @@ int main(void)
 	{
 		curr = old + older;
 
-		if (i < 92)
+		if (i < 89)
 		{
 			printf("%lu", curr);
 		}
 		else
 		{
-			onehalf = curr / 10000000;
+			onehalf = ((old / 10000000) + (older / 10000000));
 			printf("%lu", onehalf);
-			twohalf = curr % 10000000;
+			twohalf = ((old % 10000000) + (older % 10000000));
 			printf("%lu", twohalf);
 		}
 

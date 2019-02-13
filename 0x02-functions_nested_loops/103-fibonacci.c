@@ -12,23 +12,19 @@ int main(void)
 	unsigned long curr;
 	unsigned long old = 2;
 	unsigned long older = 1;
+	unsigned long sum;
 	int i;
-
-	printf("%lu, %lu, ", older, old);
 
 	for (i = 2; i <= 31; i++)
 	{
 		curr = old + older;
 		if (curr % 2 == 0)
 		{
-			printf("%lu", curr);
-			if (i != 31)
-				printf(", ");
+			sum += curr;
 		}
-		if (i == 31)
-			putchar('\n');
 		older = old;
 		old = curr;
 	}
+	printf("%lu\n", sum);
 	return (0);
 }

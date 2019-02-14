@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
+* main - print fib numbers up to 98: deal with overflowing
 *
-*
-*
+* Return: void
 */
 
 int main(void)
@@ -24,9 +24,9 @@ int main(void)
 	for (i = 1; i < 91; i++)
 	{
 		curr = old + older;
-		printf(", %lu", old);
 		older = old;
 		old = curr;
+		printf(", %lu", old);
 	}
 	onehalf = (old / split);
 	onehalf2 = (old % split);

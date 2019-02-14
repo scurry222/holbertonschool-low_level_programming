@@ -16,7 +16,7 @@ int main(void)
 	unsigned long onehalf2;
 	unsigned long twohalf;
 	unsigned long twohalf2;
-	unsigned long split = 1000000000;
+	unsigned long split = 10000000000;
 	unsigned long sum1;
 	unsigned long sum2;
 	int i;
@@ -37,7 +37,7 @@ int main(void)
 	for (i = 92; i <= 97; ++i)
 	{
 		sum2 = (onehalf2 + twohalf2) % split;
-		sum1 = (onehalf + twohalf + (sum2 / split));
+		sum1 = (onehalf + twohalf + ((onehalf2 + twohalf2) / split));
 		onehalf = twohalf;
 		onehalf2 = twohalf2;
 		twohalf = sum1;

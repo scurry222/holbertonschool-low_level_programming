@@ -15,19 +15,22 @@ void print_number(int n)
 
 	if (n == 0)
 		_putchar ('0');
-	if (n < 0)
+	else
 	{
-		n = n * -1;
-		_putchar ('-');
-	}
-	for (power = 1000000; power >= 1; power = power / 10)
-	{
-		if (n >= power)
-			printing = 1;
-		if (printing == 1)
+		if (n < 0)
 		{
-			_putchar ((n / power) + '0');
-			n = n % power;
+			n = n * -1;
+			_putchar ('-');
+		}
+		for (power = 1000000000; power >= 1; power = power / 10)
+		{
+			if (n >= power)
+				printing = 1;
+			if (printing == 1)
+			{
+				_putchar ((n / power) + '0');
+				n = n % power;
+			}
 		}
 	}
 }

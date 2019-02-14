@@ -2,44 +2,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
+/**
+* main - print largest prime factor
 *
-*
-*
+* Return: void
 */
 
 int main(void)
 {
 	unsigned long bigprime = 0;
-	unsigned long factor = 0;
 	int prime;
 	unsigned long i;
-/*	unsigned long j;*/
+	unsigned long j;
+	unsigned long num = 612852475143;
 
-	unsigned long num;
 
-	if (i % 2 != 0 && i % 3 != 0)
-
-	num = 612852475143;
-	printf("%lu\n", num);
-	for (i = 2; i <= num / 2; i++)
+	for (i = 3; i <= 999999; i = i + 2)
 	{
-		printf("i=%lu\r", i);
 		if (num % i == 0)
 		{
-			factor = i;
-		}
-		prime = 1;
-/*		for (j = 2; j <= factor / 2; j++)
-			if (factor % j == 0)
-				prime = 0;
-*/
-		if (prime)
-		{
-			bigprime = factor;
+			prime = 1;
+			for (j = 3; j <= i / 5; j = j + 2)
+				if (i % j == 0)
+				{
+					prime = 0;
+				}
+			if (prime)
+			{
+				bigprime = i;
+			}
 		}
 	}
-
-	printf ("\n biggest prime = %lu\n", bigprime);
+	printf("%lu\n", bigprime);
 	return (0);
 }

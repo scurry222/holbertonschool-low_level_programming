@@ -10,8 +10,9 @@
 void print_number(int n)
 {
 
-	int power;
+	unsigned int power;
 	int printing = 0;
+	unsigned int nosign;
 
 	if (n == 0)
 		_putchar ('0');
@@ -20,16 +21,19 @@ void print_number(int n)
 		if (n < 0)
 		{
 			n = n * -1;
+			nosign = n;
 			_putchar ('-');
 		}
+		else
+			nosign = n;
 		for (power = 1000000000; power >= 1; power = power / 10)
 		{
-			if (n >= power)
+			if (nosign >= power)
 				printing = 1;
 			if (printing == 1)
 			{
-				_putchar ((n / power) + '0');
-				n = n % power;
+				_putchar ((nosign / power) + '0');
+				nosign = nosign % power;
 			}
 		}
 	}

@@ -12,15 +12,19 @@ int main(void)
 {
 	unsigned long bigprime = 0;
 	int prime;
+
 	unsigned long i;
 	unsigned long j;
 	unsigned long num = 612852475143;
 
 
-	for (i = 3; i <= 999999; i = i + 2)
+	while (num % 2)
+		num = num / 2;
+	for (i = 3; i <= 9999999; i = i + 2)
 	{
 		if (num % i == 0)
 		{
+			num = num / i;
 			prime = 1;
 			for (j = 3; j <= i / 5; j = j + 2)
 				if (i % j == 0)
@@ -33,6 +37,7 @@ int main(void)
 			}
 		}
 	}
-	printf("%lu\n", bigprime);
+	if (num > 2)
+		printf("%lu\n", bigprime);
 	return (0);
 }

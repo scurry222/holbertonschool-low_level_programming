@@ -2,7 +2,7 @@
 #include "holberton.h"
 
 /**
-* _puts: print a string with putchar
+* _puts - print a string with putchar
 * @str: pointer containing string
 *
 * Return: void

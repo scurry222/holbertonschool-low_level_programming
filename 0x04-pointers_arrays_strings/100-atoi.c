@@ -10,7 +10,7 @@
 int _atoi(char *s)
 {
 	int num = 0;
-	unsigned int n = 0;
+	int n = 0;
 	int i = 0;
 	int length;
 	int sign = 0;
@@ -32,6 +32,6 @@ int _atoi(char *s)
 			break;
 	}
 	if (sign % 2 != 0)
-		_putchar ('-');
+		n = n * -1;
 	return (n);
 }

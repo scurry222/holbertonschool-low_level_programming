@@ -4,7 +4,7 @@
 
 /**
 * print_array - print all elements of an array
-* *a: pointer to string
+* @a: pointer to string
 * @n: length of string
 *
 * Return: void

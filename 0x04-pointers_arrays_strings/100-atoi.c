@@ -1,16 +1,16 @@
 #include "holberton.h"
 
 /**
+* _atoi - my own atoi with neg and pos inclusion
+* @s: string to pass
 *
-*
-*
-*
+* Return: modified string
 */
 
 int _atoi(char *s)
 {
 	int num = 0;
-	int n = 0;
+	unsigned int n = 0;
 	int i = 0;
 	int length;
 	int sign = 0;
@@ -32,6 +32,6 @@ int _atoi(char *s)
 			break;
 	}
 	if (sign % 2 != 0)
-		n = n * -1;
-	return(n);
+		_putchar ('-');
+	return (n);
 }

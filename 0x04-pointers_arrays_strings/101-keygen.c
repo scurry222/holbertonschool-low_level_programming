@@ -12,11 +12,10 @@ int main(void)
 {
 	int i;
 	int val = 0xad4;
-	int seed = 0;
 
+	srand(time(NULL));
 	while (val > '~')
 	{
-		srand(time(NULL));
 		i = rand() % 127;
 		if (i >= 32 && val - i >= 32)
 		{

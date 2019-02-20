@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 
 /**
@@ -13,8 +14,12 @@ int main(void)
 
 	while (val > '~')
 	{
-		printf("~");
-		val = val - '~';
+		i = rand() % 127;
+		if (i >= 32)
+		{
+			putchar(i);
+			val = val - i;
+		}
 	}
 	putchar(val);
 	return (0);

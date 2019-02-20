@@ -15,7 +15,7 @@ int main(void)
 	while (val > '~')
 	{
 		i = rand() % 127;
-		if (i >= 32)
+		if (i >= 32 && val - i >= 32)
 		{
 			putchar(i);
 			val = val - i;

@@ -10,20 +10,21 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, j, save;
+	unsigned int i, j, match, bytes;
 
 	for (i = 0; s[i]; i++)
 	{
-		save = i;
+		match = 0;
 		for (j = 0; accept[j]; j++)
 		{
-			if (s[i] == s[j])
+			if (s[i] == accept[j])
 			{
-				i++;
+				match = 1;
+				bytes++;
 			}
 		}
-		if (i == save)
-			break;
+		if (match == 0)
+			return (bytes);
 	}
-	return (i);
+	return (0);
 }

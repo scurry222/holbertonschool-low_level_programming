@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
-* memcpy - copy string 1 to string 2 until limit is reached
+* _memcpy - copy string 1 to string 2 until limit is reached
 * @dest: destination string to copy into
 * @src: source string to copy from
-* @n - number of bytes to check
+* @n: number of bytes to check
 *
 * Return: destination string
 */

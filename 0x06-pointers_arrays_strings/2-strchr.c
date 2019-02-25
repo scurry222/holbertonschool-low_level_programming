@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
 * _strchr - select part of string after char is found
@@ -11,12 +11,14 @@
 
 char *_strchr(char *s, char c)
 {
-	int i;
+	int next;
 
-	for (i = 0; s[i]; i++)
+	while (1)
 	{
-		if (s[i] == c)
-			return (s + i);
+		next = *s++;
+		if (next == c)
+			return (s - 1);
+		if (next == 0)
+			return (NULL);
 	}
-	return (NULL);
 }

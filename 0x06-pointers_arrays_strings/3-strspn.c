@@ -10,8 +10,7 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, save;
-	unsigned int bytes = 0;
+	unsigned int i, j, save;
 
 	for (i = 0; s[i]; i++)
 	{
@@ -20,12 +19,11 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (s[i] == s[j])
 			{
-				bytes++;
 				i++;
 			}
 		}
 		if (i == save)
 			break;
 	}
-	return (bytes);
+	return (i);
 }

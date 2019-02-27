@@ -12,7 +12,7 @@ int strend(char *s)
 	if (*s == 0)
 		return (0);
 
-	return (strend(s + 1));
+	return (strend(s + 1) + 1);
 }
 
 /**
@@ -47,7 +47,7 @@ int is_palindrome(char *s)
 {
 	int end = 0;
 
-	end = strend((s) - 1);
+	end = (strend(s) - 1);
 
 
 	return (compare(s, 0, end));

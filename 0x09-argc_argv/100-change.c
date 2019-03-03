@@ -13,7 +13,8 @@
 int main(int argc, char *argv[])
 {
 	int cents = 0;
-	int num;
+	int num, i;
+	int coinage[] = {25, 10, 5, 2, 1};
 
 	if (argc > 2)
 	{
@@ -24,33 +25,18 @@ int main(int argc, char *argv[])
 	if (num < 0)
 	{
 		printf("0\n");
-		return(0);
+		return (0);
 	}
-	while (num > 25)
+
+	for (i = 0; i <= 5 && num >= 0; i++)
 	{
-		cents++;
-		num = num - 25;
+		while (num >= coinage[i])
+		{
+			cents++;
+			num -= coinage[i];
+		}
 	}
-	while (num > 10)
-	{
-		cents++;
-		num = num - 10;
-	}
-	while (num > 5)
-	{
-		cents++;
-		num = num - 5;
-	}
-	while (num > 2)
-	{
-		cents++;
-		num = num - 2;
-	}	
-	while (num != 0)
-	{
-		cents++;
-		num = num - 1;
-	}
+
 	printf("%d\n", cents);
 	return (0);
 }

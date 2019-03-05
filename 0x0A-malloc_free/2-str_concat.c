@@ -19,10 +19,10 @@ char *str_concat(char *s1, char *s2)
 	while (s2[j])
 		j++;
 
-	if (*s1 == '\0' || *s2 == '\0')
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 
-	cat = malloc(((i + j + 2) * sizeof(char)));
+	cat = malloc(((i + j + 1) * sizeof(char)));
 
 	if (cat == NULL)
 		return (NULL);
@@ -40,6 +40,7 @@ char *str_concat(char *s1, char *s2)
 		cat[j] = s2[i];
 		j++;
 	}
+
 	cat[j] = '\0';
 
 	return (cat);

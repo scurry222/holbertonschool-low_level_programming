@@ -36,8 +36,7 @@ More tasks involving allocating memory
 ##4-Function that reallocates a memory block using malloc and free.
 
 	*where ptr is a pointer to the memory previously allocated with a call to malloc: malloc(old_size)
-	*old_size is the size, in bytes, of the allocated space for ptr
-and new_size is the new size, in bytes of the new memory block
+	*old_size is the size, in bytes, of the allocated space for ptr and new_size is the new size, in bytes of the new memory block
 	*The contents will be copied to the newly allocated space, in the range from the start of ptr up to the minimum of the old and new sizes
 	*If new_size > old_size, the “added” memory should not be initialized
 	*If new_size == old_size do not do anything and return ptr

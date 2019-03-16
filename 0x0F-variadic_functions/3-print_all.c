@@ -46,6 +46,7 @@ void print_s(va_list valist)
 		return;
 	}
 	printf("%s", str);
+}
 
 /**
  * print_all - prints all args
@@ -58,24 +59,24 @@ void print_all(const char * const format, ...)
 	va_list valist;
 	char *sep = "";
 
-	formatlist slist[] = {
+	fmt vlist[] = {
 		{"c", print_c},
 		{"i", print_i},
 		{"f", print_fl},
 		{"s", print_s},
-		{NULL, NULL},
+		{NULL, NULL}
 	};
 
 	va_start(valist, format);
 
 	while (format && format[i])
 	{
-		while (slist[j].name)
+		while (vlist[j].name)
 		{
-			if (format[i] == *slist[j].name)
+			if (format[i] == *vlist[j].name)
 			{
 				printf("%s", sep);
-				slist[j].type(valist);
+				vlist[j].type(valist);
 				sep = ", ";
 			}
 			j++;

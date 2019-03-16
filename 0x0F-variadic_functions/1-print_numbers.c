@@ -2,7 +2,7 @@
 
 /**
 * print_numbers - print all numbers inputted
-* @separator - separator inputted
+* @separator: separator inputted
 * @n: number of args
 *
 * Return: void
@@ -19,7 +19,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("%d%s", va_arg(valist, int), separator);
 	i++;
 
-	printf("%d\n",va_arg(valist, int));
+	printf("%d\n", va_arg(valist, int));
 
 	va_end(valist);
 }

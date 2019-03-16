@@ -6,16 +6,16 @@
 #include <stdlib.h>
 
 /**
- * struct flist - struct to match name with function 
+ * struct flist - struct to match name with function
  * @name: name
  * @type: function to match
  */
 
-typedef struct slist 
+typedef struct slist
 {
 	char *name;
 	void (*type)(va_list valist);
-} format;
+} fmt;
 
 void print_c(va_list valist);
 void print_i(va_list valist);

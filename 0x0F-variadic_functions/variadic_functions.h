@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 /**
- * struct flist - struct to match name with function
+ * struct slist - struct to match name with function
  * @name: name
  * @type: function to match
  */

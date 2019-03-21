@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
-* _strlen: modified strlen for const var
+* _strlen - modified strlen for const var
 * @s: const to find len of
 *
 * Return: length of s

@@ -29,24 +29,24 @@ int _strlen(const char *s)
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new_t;
-	list_t *last_t;
+	list_t *new;
+	list_t *last;
 
-	new_t = malloc(sizeof(list_t));
-	if (!new_t)
+	new = malloc(sizeof(list_t));
+	if (!new)
 		return (NULL);
 
-	new_t->next = NULL;
+	new->next = NULL;
 
 	if (!*head)
-		*head = new_t;
+		*head = new;
 
-	while (last_t->next)
-		last_t = last_t->next;
+	while (last->next)
+		last = last->next;
 
-	last_t->next = new_t;
-	new_t->str = strdup(str);
-	new_t->len = _strlen(str);
+	last->next = new;
+	new->str = strdup(str);
+	new->len = _strlen(str);
 
-	return (new_t);
+	return (new);
 }

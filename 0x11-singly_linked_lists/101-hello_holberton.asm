@@ -1,4 +1,5 @@
     global      main
+    extern	printf
 
 main:
     mov     edi,format
@@ -7,4 +8,4 @@ main:
     mov     eax,0
     ret
 
-msg     db  'Hello, Holberton',0
+format: db  'Hello, Holberton\n',0

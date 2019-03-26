@@ -4,7 +4,7 @@
 * print_listint_safe - print list consecutively in memory
 * @head: pointer to first element
 *
-* return: count of nodes
+* Return: count of nodes
 */
 
 size_t print_listint_safe(const listint_t *head)

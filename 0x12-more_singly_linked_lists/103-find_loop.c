@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
+* find_listint_loop - finds loops within linked lists
+* @head: pointer to first element
 *
-*
-*
-*
+* Return: pointer to start of the loop
 */
 
 listint_t *find_listint_loop(listint_t *head)

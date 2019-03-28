@@ -9,7 +9,8 @@
 
 void print_binary(unsigned long int n)
 {
-	int i, place;
+	int i;
+	unsigned long int place;
 
 	if (n < 2)
 	{

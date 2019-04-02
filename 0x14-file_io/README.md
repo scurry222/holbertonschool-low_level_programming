@@ -53,7 +53,7 @@ Create, open, close, read, and write files using the I/O system calls.
 	-Permissions of the created file: rw-rw-r--. If the file already exists, do not change the permissions
 
 
-##100.elf
+## 100.elf
 
 	-Program that displays the information contained in the ELF header at the start of an ELF file.
 

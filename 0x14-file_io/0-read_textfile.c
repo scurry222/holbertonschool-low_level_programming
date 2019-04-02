@@ -1,9 +1,10 @@
 #include "holberton.h"
 
 /**
+* free_buff - free string
+* @buff: string to pass
 *
-*
-*
+* Return: 0
 */
 
 int free_buff(char *buff)
@@ -13,10 +14,11 @@ int free_buff(char *buff)
 }
 
 /**
+* read_textfile - print letters from a text file to standard output
+* @filename: file to open
+* @letters: number of letters to print
 *
-*
-*
-*
+* Return: amount of letters read and written, 0 on fail
 */
 
 ssize_t read_textfile(const char *filename, size_t letters)

@@ -35,7 +35,7 @@ int main(int argc, char **av)
 	}
 	if (r < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can\'t read from file %s\n", av[1]);
 		exit(98);
 	}
 	a = close(f_from);
@@ -43,9 +43,9 @@ int main(int argc, char **av)
 	if (a < 0 || b < 0)
 	{
 		if (a < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_from);
+			dprintf(STDERR_FILENO, "Error: Can\'t close fd %d\n", f_from);
 		if (b < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_to);
+			dprintf(STDERR_FILENO, "Error: Can\'t close fd %d\n", f_to);
 		exit(100);
 	}
 	return (0);

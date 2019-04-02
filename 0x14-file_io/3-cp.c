@@ -28,8 +28,8 @@ int main(int argc, char **av)
 	{
 		if (write(f_to, buffer, r) != r || f_to == -1)
 		{
-			close(f_from);
 			dprintf(STDERR_FILENO, "Error: Can\'t write to %s\n", av[2]);
+			close(f_from);
 			exit(99);
 		}
 	}

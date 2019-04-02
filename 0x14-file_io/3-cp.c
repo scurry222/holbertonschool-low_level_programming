@@ -5,7 +5,7 @@
 * @argc: number of elements
 * @argv: arg1: file 1 to copy from arg 2: file to copy into
 *
-* Return: 0 on success, -1 on fail
+* Return: 0 on success
 */
 int main(int argc, char *argv[])
 {
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	f_from = open(argv[1], O_RDONLY);

@@ -1,6 +1,6 @@
 int _add(int a, int b)
 {
-	sum = 0;
+	int sum = 0;
 
 	sum = a + b;
 

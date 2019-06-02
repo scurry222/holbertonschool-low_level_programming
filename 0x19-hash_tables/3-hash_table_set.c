@@ -11,6 +11,7 @@
 int check_ht(hash_node_t **ht, const char *key)
 {
 	hash_node_t *temp = *ht;
+
 	while (temp)
 	{
 		if (!strcmp(temp->key, key))
@@ -33,7 +34,7 @@ void switch_val(hash_node_t **ht, const char *key, const char *value)
 {
 	hash_node_t *temp = *ht;
 
-	while(temp && strcmp(temp->key, key))
+	while (temp && strcmp(temp->key, key))
 		temp = temp->next;
 	free(temp->value);
 	temp->value = strdup(value);

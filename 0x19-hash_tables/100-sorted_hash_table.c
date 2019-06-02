@@ -39,8 +39,7 @@ void shash_table_sort(shash_table_t *ht, shash_node_t *snode)
 	{
 		if (strcmp(snode->key, shead->key))
 			break;
-		else
-			shead = shead->next;
+		shead = shead->next;
 	}
 	snode->sprev = shead;
 	snode->snext = shead->snext;

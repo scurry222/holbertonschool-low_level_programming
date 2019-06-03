@@ -24,8 +24,9 @@ void shash_table_sort(shash_table_t *ht, shash_node_t *snode)
 
 	if (!ht)
 		return;
+
 	shead = ht->shead;
-	if (!shead || !strcmp(snode->key, shead->key))
+	if (!shead || strcmp(snode->key, shead->key) < 0)
 	{
 		snode->snext = shead;
 		ht->shead = snode;
@@ -37,12 +38,13 @@ void shash_table_sort(shash_table_t *ht, shash_node_t *snode)
 	}
 	while (shead->snext)
 	{
-		if (strcmp(snode->key, shead->key))
+		if (strcmp(snode->key, shead->snext->key) < 0)
 			break;
-		shead = shead->next;
+		shead = shead->snext;
 	}
 	snode->sprev = shead;
 	snode->snext = shead->snext;
+
 	if (shead->snext)
 		shead->snext->sprev = snode;
 	else
@@ -79,6 +81,38 @@ shash_table_t *shash_table_create(unsigned long int size)
 	return (ht);
 }
 
+
+/**
+ * add_snode - add new snode at the beginning of the shash table list
+ * @key: key to add
+ * @value: value to add
+ *
+ * Return: the address of the new element, NULL if failure
+ */
+shash_node_t *add_snode(const char *key, const char *value)
+{
+	shash_node_t *new;
+
+	new = malloc(sizeof(shash_node_t));
+	if (!new)
+		return (NULL);
+
+	new->key = strdup(key);
+	if (!new->key)
+	{
+		free(new->key);
+		return (NULL);
+	}
+	new->value = strdup(value);
+	if (!new->value)
+	{
+		free(new->key);
+		free(new);
+		return (NULL);
+	}
+
+	return (new);
+}
 /**
 * check_sht - check if key exists in shash table
 * @ht: double pointer to entire shash table
@@ -113,43 +147,10 @@ void switch_sval(shash_node_t **ht, const char *key, const char *value)
 {
 	shash_node_t *temp = *ht;
 
-	while (temp && strcmp(temp->key, key))
+	while (temp && !strcmp(temp->key, key))
 		temp = temp->next;
 	free(temp->value);
 	temp->value = strdup(value);
-}
-
-
-/**
- * add_snode - add new snode at the beginning of the shash table list
- * @key: key to add
- * @value: value to add
- *
- * Return: the address of the new element, NULL if failure
- */
-shash_node_t *add_snode(const char *key, const char *value)
-{
-	shash_node_t *new;
-
-	new = malloc(sizeof(shash_node_t));
-	if (!new)
-		return (NULL);
-
-	new->key = strdup(key);
-	if (!new->key)
-	{
-		free(new->key);
-		return (NULL);
-	}
-	new->value = strdup(value);
-	if (!new->value)
-	{
-		free(new->key);
-		free(new);
-		return (NULL);
-	}
-
-	return (new);
 }
 
 

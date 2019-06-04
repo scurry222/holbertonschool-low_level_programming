@@ -102,7 +102,10 @@ shash_node_t *add_snode(const char *key, const char *value)
 
 	new->key = strdup(key);
 	if (!new->key)
+	{
+		free(new);
 		return (NULL);
+	}
 	new->value = strdup(value);
 	if (!new->value)
 	{

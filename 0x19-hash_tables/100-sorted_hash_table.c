@@ -66,14 +66,17 @@ shash_table_t *shash_table_create(unsigned long int size)
 	if (size == 0)
 		return (NULL);
 
-	ht = malloc(sizeof(shash_table_t));
+	ht = calloc(1, sizeof(shash_table_t));
 	if (!ht)
 		return (NULL);
 
 	ht->size = size;
-	ht->array = malloc(sizeof(shash_node_t *) * size);
+	ht->array = calloc(size, sizeof(shash_node_t *));
 	if (!ht->array)
+	{
+		free(ht);
 		return (NULL);
+	}
 
 	for (i = 0; i < size; i++)
 		ht->array[i] = NULL;
@@ -93,16 +96,13 @@ shash_node_t *add_snode(const char *key, const char *value)
 {
 	shash_node_t *new;
 
-	new = malloc(sizeof(shash_node_t));
+	new = calloc(1, sizeof(shash_node_t));
 	if (!new)
 		return (NULL);
 
 	new->key = strdup(key);
 	if (!new->key)
-	{
-		free(new->key);
 		return (NULL);
-	}
 	new->value = strdup(value);
 	if (!new->value)
 	{

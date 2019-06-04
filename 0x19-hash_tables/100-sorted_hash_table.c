@@ -204,7 +204,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	const unsigned char *ukey = NULL;
 	shash_node_t *shead = NULL;
 
-	if (!ht)
+	if (!ht || !key)
 		return (NULL);
 
 	ukey = (unsigned char *)key;

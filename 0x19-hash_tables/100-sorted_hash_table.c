@@ -169,7 +169,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	unsigned char *ukey = NULL;
 	shash_node_t *snode = NULL;
 
-	if (!ht || !key || key[0] == '\0' || !ht->array || !ht->size)
+	if (!ht || !key || key[0] == '\0' || !ht->array || !ht->size || !value)
 		return (0);
 
 	ukey = (unsigned char *)key;

@@ -151,6 +151,8 @@ void switch_sval(shash_node_t **ht, const char *key, const char *value)
 		temp = temp->next;
 	free(temp->value);
 	temp->value = strdup(value);
+	if (!temp->value)
+		exit(1);
 }
 
 

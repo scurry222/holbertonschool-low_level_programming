@@ -152,10 +152,13 @@ void switch_sval(shash_node_t **ht, const char *key, const char *value)
 
 	while (temp && !strcmp(temp->key, key))
 		temp = temp->next;
-	free(temp->value);
-	temp->value = strdup(value);
-	if (!temp->value)
-		exit(1);
+	if (temp)
+	{
+		free(temp->value);
+		temp->value = strdup(value);
+		if (!temp->value)
+			exit(1);
+	}
 }
 
 
@@ -216,7 +219,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 	index = key_index(ukey, ht->size);
 
-	shead = (ht->array)[index];
+	shead = ht->array[index];
 
 	while (shead)
 	{

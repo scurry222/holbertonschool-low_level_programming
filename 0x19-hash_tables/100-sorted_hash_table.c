@@ -150,7 +150,7 @@ void switch_sval(shash_node_t **ht, const char *key, const char *value)
 {
 	shash_node_t *temp = *ht;
 
-	while (temp && !strcmp(temp->key, key))
+	while (temp && strcmp(temp->key, key))
 		temp = temp->next;
 	if (temp)
 	{

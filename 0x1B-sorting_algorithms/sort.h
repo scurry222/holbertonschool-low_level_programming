@@ -62,4 +62,9 @@ void heapify(int *array, size_t end, size_t start, size_t size);
 void radix_sort(int *array, size_t size);
 void LSD_sort(int *array, size_t size, size_t lsd);
 
+/* 107 - quick sort hoare style */
+void quick_sort_hoare(int *array, size_t size);
+void hoare_recurse(int *array, int lo, int hi, size_t size);
+int hoare_partition(int *array, int lo, int hi, size_t size);
+
 #endif

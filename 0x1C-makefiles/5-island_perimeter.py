@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 
+
 def island_perimeter(grid):
     """ Return the perimeter of the island from the grid
 
-	Args:
+    Args:
             grid(2D array, ints): 0 repr water, 1 repr land
                                 not connected diagonally
                               grid < 100
     """
+
     p = 0
     h = len(grid)
-    w = len(grid[0]) 
+    w = len(grid[0])
 
     for x in range(h):
         for y in range(w):

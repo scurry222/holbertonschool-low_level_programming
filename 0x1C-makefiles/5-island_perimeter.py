@@ -11,18 +11,18 @@ def island_perimeter(grid):
     """
 
     p = 0
-    h = len(grid)
-    w = len(grid[0])
+    w = len(grid)
+    h = len(grid[0])
 
-    for x in range(h):
-        for y in range(w):
-            if grid[x][y] == 1:
-                if x - 1 < 0 or grid[x - 1][y] == 0:
+    for i in range(w):
+        for j in range(h):
+            if grid[i][j] == 1:
+                if i - 1 < 0 or grid[i - 1][j] == 0:
                     p += 1
-                if x + 1 >= w or grid[x + 1][y] == 0:
+                if i + 1 >= w or grid[i + 1][j] == 0:
                     p += 1
-                if y - 1 < 0 or grid[x][y - 1] == 0:
+                if j - 1 < 0 or grid[i][j - 1] == 0:
                     p += 1
-                if y + 1 >= h or grid[x][y + 1] == 0:
+                if j + 1 >= h or grid[i][j + 1] == 0:
                     p += 1
     return p

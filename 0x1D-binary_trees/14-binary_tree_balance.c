@@ -1,10 +1,12 @@
 #include "binary_trees.h"
 
 /**
+* binary_tree_height - count the amount of nodes high a tree is
+* @tree: pointer to root of the tree
 *
-*
-*
+* Return: amount of nodes high
 */
+
 size_t binary_tree_height(const binary_tree_t *tree)
 {
 	size_t len_l, len_r, height;
@@ -27,9 +29,11 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
+* binary_tree_balance - check if left and right sides of the root are equal,
+*			or ratio of nodes unequal
+* @tree: root to check
 *
-*
-*
+* Return: ratio of nodes unequal
 */
 int binary_tree_balance(const binary_tree_t *tree)
 {

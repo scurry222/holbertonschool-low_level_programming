@@ -14,11 +14,12 @@
 int jump_search(int *array, size_t size, int value)
 {
 	int jump = sqrt(size), bot = 0, top = bot + jump;
-	int i = 0;
-	int s = (int)size;
+	int i = 0, s = 0;
 
 	if (!array)
 		return (-1);
+
+	s = (int)size;
 
 	while (bot < s)
 	{

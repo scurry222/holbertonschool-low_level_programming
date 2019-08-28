@@ -24,24 +24,33 @@ int jump_search(int *array, size_t size, int value)
 	while (bot < s)
 	{
 		printf("Value checked array[%d] = [%d]\n", bot, array[bot]);
-		if (array[bot] <= value && array[top] >= value)
+		if (top < s)
 		{
-			printf("Value found between indexes [%d] and [%d]\n",
-				bot, top);
-			for (i = bot; i <= top && array[i] <= value; i++)
+			if (array[bot] <= value && array[top] >= value)
 			{
-				printf("Value checked array[%d] = [%d]\n",
-					i, array[i]);
-				if (array[i] == value)
-					return (i);
+				printf("Value found between indexes [%d] and [%d]\n", bot, top);
+				break;
 			}
 		}
-		bot += jump;
+		else
+		{
+			if (array[bot] <= value)
+			{
+				printf("Value found between indexes [%d] and [%d]\n", bot, top);
+				break;
+			}
+		}
+		bot = top;
 		top = bot + jump;
 	}
-	top -= jump;
-	bot -= jump;
-	printf("Value found between indexes [%d] and [%d]\n", bot, top);
-	printf("Value checked array[%d] = [%d]\n", bot, array[bot]);
+	for (i = bot; bot <= top; i++)
+	{
+		if (top >= s)
+			return (-1);
+		printf("Value checked array[%d] = [%d]\n", i, array[i]);
+		if (array[i] == value)
+			return (i);
+	}
+
 	return (-1);
 }
